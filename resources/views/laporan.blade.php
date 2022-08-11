@@ -2,9 +2,9 @@
 
 <page size="A4">
     <div class="container mx-auto px-3 my-2">
-        <header class="mx-auto items-center justify-center content-center text-center">
+        <header class="mx-auto items-center justify-center content-center text-center mb-4">
             <img src="/storage/assets/logokampus.jpg" alt="logo kampus" class="items-center w-36 mx-auto">
-            <h2 class="font-weight-bold">Indeks Keamanan Informasi</h2>
+            <h2 class="font-bold">Indeks Keamanan Informasi</h2>
         </header>
 
         <div class="grid md:grid-cols-2 gap-x-10 grid-cols-1 justify-items-center">
