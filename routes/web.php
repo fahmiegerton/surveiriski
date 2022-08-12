@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EntriesController;
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,12 +18,14 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    // return Inertia::render('Welcome', [
+    //     'canLogin' => Route::has('login'),
+    //     'canRegister' => Route::has('register'),
+    //     'laravelVersion' => Application::VERSION,
+    //     'phpVersion' => PHP_VERSION,
+    // ]);
+
+    return view('landingpage');
 });
 
 Route::middleware([
@@ -32,9 +36,22 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::prefix('feedback')->controller(FeedbackController::class)->group(function () {
+        Route::get('/', 'index')->name('feedback.index');
+        Route::post('/', 'store')->name('feedback.store');
+        Route::delete('/', 'destroy')->name('feedback.destroy');
+    });
 });
 
 
 Route::get('laporan', function () {
     return view('laporan');
+});
+
+Route::get('survey', [EntriesController::class, 'index'])->name('survey.entries');
+
+Route::prefix('survey')->controller(EntriesController::class)->group(function () {
+    Route::get('survey')->name('survey.entries');
+    Route::post('save')->name('survey.save');
 });
