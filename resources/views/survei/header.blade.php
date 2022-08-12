@@ -28,4 +28,4 @@
     @vite(['resources/css/survei.css'])
 </head>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="text-center text-white d-flex h-100 bg-dark">

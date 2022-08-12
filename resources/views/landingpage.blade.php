@@ -386,9 +386,9 @@
                 class="w-full max-w-2xl px-5 px-8 mt-2 text-2xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl md:px-0">
                 Umpan balik untuk tingkatkan layanan kami</h3>
 
-            <div class="max-w-full mx-auto md:max-w-6xl sm:px-8 mt-6">
+            <div class="max-w-full mx-auto mt-6 md:max-w-7xl sm:px-8 md:min-w-50">
                 @if (session('success'))
-                    <div class="bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full"
+                    <div class="inline-flex items-center w-full px-6 py-5 mb-3 text-base text-green-700 bg-green-100 rounded-lg"
                         role="alert">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
                             class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -403,54 +403,52 @@
                 <!-- Basic Pricing -->
                 <form class="w-full max-w-lg" method="POST" action="/feedback/store">
                     @csrf
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-full px-3 mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                 for="grid-first-name">
                                 Nama
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none focus:outline-none focus:bg-white"
                                 id="grid-first-name" type="text" placeholder="Jane">
                             @error('name')
-                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                <p class="text-xs italic text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-full px-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                 for="grid-password">
                                 E-mail
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="email" type="email">
-                            @error('name')
-                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                            @error('email')
+                                <p class="text-xs italic text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-full px-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                 for="grid-password">
                                 Pesan
                             </label>
                             <textarea
-                                class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+                                class="block w-full h-48 px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none resize-none no-resize focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="message"></textarea>
-                            <p class="text-gray-600 text-xs italic">Re-size can be disabled by set by resize-none /
-                                resize-y / resize-x / resize</p>
-                            @error('name')
-                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                            @error('message')
+                                <p class="text-xs italic text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3">
                             <button
-                                class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                                class="px-4 py-2 font-bold text-white bg-teal-400 rounded shadow hover:bg-teal-400 focus:shadow-outline focus:outline-none"
                                 type="button">
                                 Kirim
                             </button>

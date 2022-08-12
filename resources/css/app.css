@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@media (min-width: 768px) {
+    .md\:min-w-50 {
+        min-width: 50%;
+    }
+ }

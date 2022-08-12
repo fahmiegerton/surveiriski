@@ -33,14 +33,17 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [EntriesController::class, 'dash'])->name('dashboard');
 
     Route::prefix('feedback')->controller(FeedbackController::class)->group(function () {
         Route::get('/', 'index')->name('feedback.index');
         Route::post('/', 'store')->name('feedback.store');
         Route::delete('/', 'destroy')->name('feedback.destroy');
+    });
+
+    Route::prefix('survey')->controller(EntriesController::class)->group(function () {
+        Route::delete('destroy', 'destroy')->name('survey.destroy');
+        Route::get('report/{id}', 'report')->name('survey.report');
     });
 });
 
@@ -49,9 +52,8 @@ Route::get('laporan', function () {
     return view('laporan');
 });
 
-Route::get('survey', [EntriesController::class, 'index'])->name('survey.entries');
-
 Route::prefix('survey')->controller(EntriesController::class)->group(function () {
-    Route::get('survey')->name('survey.entries');
-    Route::post('save')->name('survey.save');
+    Route::get('/', 'index')->name('survey.entries');
+    Route::post('save', 'store')->name('survey.save');
+    Route::get('gettest', 'gettesst')->name('survey.test');
 });
