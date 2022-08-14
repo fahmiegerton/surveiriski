@@ -46,6 +46,13 @@ class EntriesController extends Controller
         return redirect()->back()->with('success', 'Terima kasih telah berpartisipasi!');
     }
 
+    public function destroy(Request $r, $id)
+    {
+        $data = Entry::findOrFail($id);
+        $data->delete();
+        return redirect()->back()->with('success', 'Sudah terhapus');
+    }
+
     public function gettesst()
     {
         // dump((new Survey)->entries()->get());

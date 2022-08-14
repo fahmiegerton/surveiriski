@@ -377,7 +377,7 @@
     </div>
     <!-- END FEATURES SECTION -->
 
-    <!-- Pricing Section -->
+    <!-- Feedback Section -->
     <div class="relative px-8 py-10 bg-white border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
 
         <div id="feedback" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
@@ -411,7 +411,7 @@
                             </label>
                             <input
                                 class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none focus:outline-none focus:bg-white"
-                                id="grid-first-name" type="text" placeholder="Jane">
+                                id="name" name="name" type="text" placeholder="Jane">
                             @error('name')
                                 <p class="text-xs italic text-red-500">{{ $message }}</p>
                             @enderror
@@ -425,7 +425,7 @@
                             </label>
                             <input
                                 class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="email" type="email">
+                                id="email" name="email" type="email">
                             @error('email')
                                 <p class="text-xs italic text-red-500">{{ $message }}</p>
                             @enderror
@@ -439,7 +439,7 @@
                             </label>
                             <textarea
                                 class="block w-full h-48 px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none resize-none no-resize focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="message"></textarea>
+                                id="message" name="message"></textarea>
                             @error('message')
                                 <p class="text-xs italic text-red-500">{{ $message }}</p>
                             @enderror
@@ -449,7 +449,7 @@
                         <div class="md:w-1/3">
                             <button
                                 class="px-4 py-2 font-bold text-white bg-teal-400 rounded shadow hover:bg-teal-400 focus:shadow-outline focus:outline-none"
-                                type="button">
+                                type="submit">
                                 Kirim
                             </button>
                         </div>
@@ -461,7 +461,7 @@
         </div>
 
     </div>
-    <!-- End Pricing Section -->
+    <!-- End Feedback Section -->
 
     <!-- Start Testimonials -->
     <div id="testimonials"

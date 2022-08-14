@@ -3,7 +3,7 @@
 <page size="A4">
     <div class="container px-3 mx-auto my-2">
         <header class="items-center content-center justify-center mx-auto mb-4 text-center">
-            <img src="/storage/assets/logokampus.jpg" alt="logo kampus" class="items-center mx-auto w-36">
+            <img src="/assets/logokampus.jpg" alt="logo kampus" class="items-center mx-auto w-36">
             <h2 class="font-bold">Indeks Keamanan Sistem Informasi</h2>
         </header>
 

@@ -35,14 +35,13 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [EntriesController::class, 'dash'])->name('dashboard');
 
-    Route::prefix('feedback')->controller(FeedbackController::class)->group(function () {
+    Route::prefix('dash/feedback')->controller(FeedbackController::class)->group(function () {
         Route::get('/', 'index')->name('feedback.index');
-        Route::post('/', 'store')->name('feedback.store');
-        Route::delete('/', 'destroy')->name('feedback.destroy');
+        Route::delete('destroy/{id}', 'destroy')->name('feedback.destroy');
     });
 
     Route::prefix('survey')->controller(EntriesController::class)->group(function () {
-        Route::delete('destroy', 'destroy')->name('survey.destroy');
+        Route::delete('destroy/{id}', 'destroy')->name('survey.destroy');
         Route::get('report/{id}', 'report')->name('survey.report');
     });
 });
@@ -56,4 +55,9 @@ Route::prefix('survey')->controller(EntriesController::class)->group(function ()
     Route::get('/', 'index')->name('survey.entries');
     Route::post('save', 'store')->name('survey.save');
     Route::get('gettest', 'gettesst')->name('survey.test');
+});
+
+
+Route::prefix('feedback')->controller(FeedbackController::class)->group(function () {
+    Route::post('store', 'store')->name('feedback.store');
 });

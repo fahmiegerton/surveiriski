@@ -38,7 +38,7 @@ class FeedbackController extends Controller
      */
     public function store(Request $r, Feedback $f)
     {
-        $d = $f->fill($r->validate([
+        $d = $f->create($r->validate([
             'name' => 'required|max:80|alpha_dash',
             'email' => 'nullable|email',
             'message' => 'required|max:125'

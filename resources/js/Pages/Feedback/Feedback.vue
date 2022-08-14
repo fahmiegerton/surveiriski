@@ -34,6 +34,8 @@ function truncate(input) {
 
     <Head title="Umpan Balik" />
 
+    <pre>{{ data }}</pre>
+
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -41,19 +43,24 @@ function truncate(input) {
                     <table class="min-w-full border">
                         <thead class="border">
                             <tr>
-                                <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
+                                <th scope="col"
+                                    class="px-6 py-4 text-sm font-medium text-left text-gray-900">
                                     #
                                 </th>
-                                <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
+                                <th scope="col"
+                                    class="px-6 py-4 text-sm font-medium text-left text-gray-900">
                                     Nama
                                 </th>
-                                <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
+                                <th scope="col"
+                                    class="px-6 py-4 text-sm font-medium text-left text-gray-900">
                                     Email
                                 </th>
-                                <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
+                                <th scope="col"
+                                    class="px-6 py-4 text-sm font-medium text-left text-gray-900">
                                     Pesan
                                 </th>
-                                <th scope="col" class="px-6 py-4 text-sm font-medium text-left text-gray-900">
+                                <th scope="col"
+                                    class="px-6 py-4 text-sm font-medium text-left text-gray-900">
                                     Aksi
                                 </th>
                             </tr>
@@ -73,15 +80,16 @@ function truncate(input) {
                                     {{ truncate('Perlu peningkatan di sisi user interface agar mudah digunakan') }}
                                 </td>
                                 <td class="px-6 py-4 text-sm font-light text-gray-900 border whitespace-nowrap">
-                                    <div
-                                        class="flex items-center w-3/4 px-3 py-2 mx-auto my-3">
-                                        <button type="button" :disabled="loading"
-                                            class="px-4 py-2 m-2 text-white transition duration-500 bg-indigo-500 border rounded-md select-none ease hover:bg-indigo-600 focus:outline-none focus:shadow-outline">
+                                    <div class="flex items-center w-3/4 px-3 py-2 mx-auto my-3">
+                                        <button type="button"
+                                                :disabled="loading"
+                                                class="px-4 py-2 m-2 text-white transition duration-500 bg-indigo-500 border rounded-md select-none ease hover:bg-indigo-600 focus:outline-none focus:shadow-outline">
                                             <div v-html="iconSvg('eye')"></div>
                                         </button>
-                                        <button type="button" :disabled="loading"
-                                            class="px-4 py-2 m-2 text-white transition duration-500 bg-red-500 border rounded-md select-none ease hover:bg-red-600 focus:outline-none focus:shadow-outline"
-                                            @click.prevent="deleteFeedback(1)">
+                                        <button type="button"
+                                                :disabled="loading"
+                                                class="px-4 py-2 m-2 text-white transition duration-500 bg-red-500 border rounded-md select-none ease hover:bg-red-600 focus:outline-none focus:shadow-outline"
+                                                @click.prevent="deleteFeedback(1)">
                                             <div v-html="iconSvg('trash-2')"></div>
                                         </button>
                                     </div>
