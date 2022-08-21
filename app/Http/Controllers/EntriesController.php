@@ -53,6 +53,11 @@ class EntriesController extends Controller
         return redirect()->back()->with('success', 'Sudah terhapus');
     }
 
+    public function generateReport(Request $r, $id = null)
+    {
+        return view('laporan');
+    }
+
     public function gettesst()
     {
         // dump((new Survey)->entries()->get());

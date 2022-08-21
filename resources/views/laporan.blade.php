@@ -3,7 +3,7 @@
 <page size="A4">
     <div class="container px-3 mx-auto my-2">
         <header class="items-center content-center justify-center mx-auto mb-4 text-center">
-            <img src="/assets/logokampus.jpg" alt="logo kampus" class="items-center mx-auto w-36">
+            <img src="/assets/logo.png" alt="logo kampus" class="items-center mx-auto w-36">
             <h2 class="font-bold">Indeks Keamanan Sistem Informasi</h2>
         </header>
 
@@ -12,7 +12,7 @@
                 <h4 class="mb-2"><b>Responden :</b></h4>
 
                 <div class="grid grid-cols-2">
-                    <p class="font-weight-bold">Satuan Kerja</p>
+                    <p class="font-weight-bold">Departemen</p>
                     <p class="font-weight-bold">: Departemen</p>
 
                     <p class="font-weight-bold">Alamat</p>
@@ -20,9 +20,6 @@
 
                     <p class="font-weight-bold">Kota Kode Pos</p>
                     <p class="font-weight-bold">: 76119</p>
-
-                    <p class="font-weight-bold">No. Telp</p>
-                    <p class="font-weight-bold">: 081234567890</p>
 
                     <p class="font-weight-bold">Email</p>
                     <p class="font-weight-bold">: user@mail.com</p>

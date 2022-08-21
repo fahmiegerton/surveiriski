@@ -47,9 +47,7 @@ Route::middleware([
 });
 
 
-Route::get('laporan', function () {
-    return view('laporan');
-});
+Route::get('laporan', [EntriesController::class, 'generateReport']);
 
 Route::prefix('survey')->controller(EntriesController::class)->group(function () {
     Route::get('/', 'index')->name('survey.entries');
