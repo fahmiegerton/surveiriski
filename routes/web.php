@@ -26,7 +26,7 @@ Route::get('/', function () {
     // ]);
 
     return view('landingpage');
-});
+})->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -44,10 +44,9 @@ Route::middleware([
         Route::delete('destroy/{id}', 'destroy')->name('survey.destroy');
         Route::get('report/{id}', 'report')->name('survey.report');
     });
+
+    Route::get('laporan/{id}', [EntriesController::class, 'generateReport'])->name('laporan');
 });
-
-
-Route::get('laporan', [EntriesController::class, 'generateReport']);
 
 Route::prefix('survey')->controller(EntriesController::class)->group(function () {
     Route::get('/', 'index')->name('survey.entries');

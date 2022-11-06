@@ -101,7 +101,7 @@ const loading = ref(false)
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                                                    <a href="/laporan"
+                                                    <a :href="route('laporan', i.id)"
                                                        :disabled="loading"
                                                        target="_blank"
                                                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded-md hover:bg-gray-300">
