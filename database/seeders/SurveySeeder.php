@@ -69,25 +69,6 @@ class SurveySeeder extends Seeder
                 'options' => $tataKelolaOptions
             ]);
         }
-        // ----------------------------------------------------------------------------
-
-        $tataKelola = $survey->sections()->create(['name' => 'Tata Kelola Keamanan Informasi']);
-        $tataKelolaOptions = ['Tidak dilakukan', 'Dalam perencanaan', 'Dalam penerapan atau diterapkan sebagian', 'diterapkan secara menyeluruh'];
-        $tataKelolaQuestions = [
-            'Apakah pimpinan instansi Anda secara prinsip dan resmi bertanggung jawab terhadap pelaksanaan program keamanan informasi (misal yang tercantum dalam ITSP), termasuk penetapan kebijakan terkait?',
-            'Apakah instansi Anda memiliki fungsi atau bagian yang secara spesifik mempunyai tugas dan tanggung jawab mengelola informasi dan menjaga kepatuhannya?',
-            'Apakah pejabat/petugas pelaksana pengamanan informasi mempunyai wewenang yang sesuai untuk menerapkan dan menjamin kepatuhan program keamanan informasi?',
-            'Apakah penanggung jawab pelaksana pengamanan informasi mempunyai wewenang yang sesuai untuk menerapkan dan menjamin kepatuhan program keamanan informasi?',
-            'Apakah peran pelaksana pengamanan informasi yang mencakup semua keperluan dipetakan dengan lengkap, termasuk kebutuhan audit internal dan persyaratan segregasi kewenangan?'
-        ];
-
-        foreach ($tataKelolaQuestions as $q) {
-            $tataKelola->questions()->create([
-                'content' => $q,
-                'type' => 'radio',
-                'options' => $tataKelolaOptions
-            ]);
-        }
 
         // ----------------------------------------------------------------------------
 
