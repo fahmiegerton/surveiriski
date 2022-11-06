@@ -3,6 +3,14 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+    css: {
+        preprocessorOptions: {
+            less: {
+                javascriptEnabled: true,
+                additionalData: "@root-entry-name: default;",
+            },
+        },
+    },
     plugins: [
         laravel({
             input: 'resources/js/app.js',
