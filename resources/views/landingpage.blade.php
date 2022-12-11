@@ -10,7 +10,7 @@
         you to build your TailwindCSS from the source.
         https://tailwindcss.com/docs/installation
     -->
-    @vite(['resources/css/app.css'])
+    @vite(['resources/js/app.css'])
     <!-- Small CSS to Hide elements at 1520px size -->
     <style>
         @media(max-width:1520px) {
